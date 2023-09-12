@@ -94,7 +94,7 @@ def main(args):
     for i in range(args.nframes):
         animate(i)
         plt.savefig(f"./tmp/harm_{i:02d}.png", transparent=True)
-    subprocess.call(f"convert -duplicate 1,-2-1 -delay 5 -loop 0 -dispose Background ./tmp/*.png {outfile}", shell=True)
+    subprocess.call(f"convert -delay 5 -loop 0 -dispose Background ./tmp/*.png {outfile}", shell=True)
 
     print('\nWrote '+outfile)
 
